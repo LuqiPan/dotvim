@@ -1,6 +1,10 @@
 " Use Vim settings, rather then Vi settings
 set nocompatible
 
+" Pathogen disabled plugins list
+" No need: I've deleted vim-airline
+" let g:pathogen_disabled = ["vim-airline"]
+
 " Start pathogen
 execute pathogen#incubate()
 execute pathogen#infect()
@@ -72,9 +76,10 @@ set statusline+=%<%P                         " file position
 " Set command line height to 2 lines
 set cmdheight=2
 
-" Set the colorscheme to solarized
+" Set the colorscheme to default
+" Since the colorscheme of the terminal has already been set to solarized
 set background=light
-colorscheme solarized
+colorscheme default
 
 " Error bells are displayed visually.
 set visualbell
@@ -86,6 +91,9 @@ autocmd BufNewFile,BufRead *.xml source ~/.vim/ftplugin/xml.vim
 " plugins for python
 autocmd BufNewFile,BufRead *.py compiler python
 
+" mr to make and run C assignment for CS167
+nmap mr :!make && ./sh<CR>
+
 " plugins to make jekyll build for markdown
 autocmd BufNewFile,BufRead *.md compiler md
 
@@ -96,3 +104,8 @@ command W execute "w | make"
 nnoremap <space> za  
 " ============================================================
 "set foldmethod=indent
+
+" automatically create and update cscope database
+nmap <F11> :!find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files<CR>
+  \:!cscope -b -i cscope.files -f cscope.out<CR>
+  \:cs reset<CR>
