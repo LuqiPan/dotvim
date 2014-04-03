@@ -109,3 +109,8 @@ nnoremap <space> za
 nmap <F11> :!find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files<CR>
   \:!cscope -b -i cscope.files -f cscope.out<CR>
   \:cs reset<CR>
+
+" automatically convert the format to unix style
+set fileformat=unix
+
+"filetype plugin on
