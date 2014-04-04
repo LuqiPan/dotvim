@@ -15,6 +15,8 @@ syntax on
 
 " Try to detect filetype
 filetype on
+filetype indent on
+filetype plugin on
 
 " Load indent file for filetype
 " filetype plugin indent on
@@ -97,11 +99,15 @@ nmap mr :!make && ./sh<CR>
 " plugins to make jekyll build for markdown
 autocmd BufNewFile,BufRead *.md compiler md
 
+" set tab width for ruby
+autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 noexpandtab
+
 " map :W to :w | :make
 command W execute "w | make"
 
 " use space to open and close fold
 nnoremap <space> za  
+
 " ============================================================
 "set foldmethod=indent
 
@@ -113,4 +119,8 @@ nmap <F11> :!find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.
 " automatically convert the format to unix style
 set fileformat=unix
 
-"filetype plugin on
+" filetype plugin on
+
+" disable folding
+set nofen
+set foldlevel=99
