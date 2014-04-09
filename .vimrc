@@ -124,3 +124,12 @@ set fileformat=unix
 " disable folding
 set nofen
 set foldlevel=99
+
+" set 256 colors
+set t_Co=256
+
+" setting up airline
+let g:airline_theme='bubblegum'
+
+set ttimeoutlen=50
+set encoding=utf-8
