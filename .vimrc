@@ -133,3 +133,4 @@ let g:airline_theme='bubblegum'
 
 set ttimeoutlen=50
 set encoding=utf-8
+set scrolloff=50
