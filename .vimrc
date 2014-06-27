@@ -100,7 +100,10 @@ nmap mr :!make && ./sh<CR>
 autocmd BufNewFile,BufRead *.md compiler md
 
 " set tab width for ruby
-autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 noexpandtab
+autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab
+
+" set tab width for CoffeeScript
+autocmd FileType coffee setlocal shiftwidth=2 tabstop=2 expandtab
 
 " map :W to :w | :make
 command W execute "w | make"
@@ -137,8 +140,6 @@ set scrolloff=50
 
 " backspace problems
 set backspace=2
-
-autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 
 " Run the current file with rspec
  map <Leader>rb :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
