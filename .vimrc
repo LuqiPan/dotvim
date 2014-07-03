@@ -164,3 +164,6 @@ set backspace=2
 
  " workaround for ack.vim problem
  set shell=bash
+
+ " set swap file location
+ set directory=$HOME/.vim/swapfiles//
