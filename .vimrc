@@ -175,3 +175,11 @@ endfunction
 
 " binding to strip trailing whitespaces
 nnoremap <leader>swl :call <SID>StripTrailingWhitespaces()<CR>
+
+if has("autocmd")
+  " Source the vimrc file after saving it
+  autocmd bufwritepost .vimrc source $MYVIMRC
+endif
+
+" \v to edit vimrc file in current window
+nnoremap <leader>vrc :edit $MYVIMRC<CR>
