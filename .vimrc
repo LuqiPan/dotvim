@@ -157,5 +157,21 @@ set colorcolumn=81
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
 
-" " Use the same symbols as TextMate for tabstops and EOLs
+" Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:↩,trail:□
+
+" Strip trailing whitespaces
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
+" binding to strip trailing whitespaces
+nnoremap <leader>swl :call <SID>StripTrailingWhitespaces()<CR>
