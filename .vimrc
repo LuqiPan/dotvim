@@ -99,12 +99,6 @@ nmap mr :!make && ./sh<CR>
 " plugins to make jekyll build for markdown
 autocmd BufNewFile,BufRead *.md compiler md
 
-" set tab width for ruby
-autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab
-
-" set tab width for CoffeeScript
-autocmd FileType coffee setlocal shiftwidth=2 tabstop=2 expandtab
-
 " map :W to :w | :make
 command W execute "w | make"
 
