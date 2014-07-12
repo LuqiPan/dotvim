@@ -170,3 +170,9 @@ set directory=$HOME/.vim/swapfiles//
 
 " 80-column mark
 set colorcolumn=81
+
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+
+" " Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:↩,trail:□
