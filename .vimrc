@@ -66,14 +66,14 @@ set wildmenu
 " Status line
 set laststatus=2
 set statusline=
-set statusline+=%-3.3n\                      " buffer number
-set statusline+=%f\                          " filename
-set statusline+=%h%m%r%w                     " status flags
-set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type
-set statusline+=%=                           " right align remainder
-set statusline+=0x%-8B                       " character value
-set statusline+=%-14(%l,%c%V%)               " line, character
-set statusline+=%<%P                         " file position
+"set statusline+=%-3.3n\                      " buffer number
+"set statusline+=%f\                          " filename
+"set statusline+=%h%m%r%w                     " status flags
+"set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type
+"set statusline+=%=                           " right align remainder
+"set statusline+=0x%-8B                       " character value
+"set statusline+=%-14(%l,%c%V%)               " line, character
+"set statusline+=%<%P                         " file position
 
 " Set command line height to 2 lines
 set cmdheight=2
@@ -87,17 +87,15 @@ colorscheme default
 set visualbell
 
 " use XML plugin for .xml files
-autocmd BufNewFile,BufRead *.xml source ~/.vim/ftplugin/xml.vim
+"autocmd BufNewFile,BufRead *.xml source ~/.vim/ftplugin/xml.vim
 " autocmd BufNewFile *.xml source ~/.vim/ftplugin/xmlheader.vim
 
 " plugins for python
 autocmd BufNewFile,BufRead *.py compiler python
 
-" mr to make and run C assignment for CS167
-nmap mr :!make && ./sh<CR>
-
 " plugins to make jekyll build for markdown
 autocmd BufNewFile,BufRead *.md compiler md
+autocmd BufNewFile,BufRead *.md setlocal shiftwidth=4 softtabstop=4 tabstop=4
 
 " map :W to :w | :make
 command W execute "w | make"
