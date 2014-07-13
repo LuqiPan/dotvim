@@ -58,6 +58,8 @@ set expandtab
 
 " Display cursor position
 set ruler
+
+" Allow creating hidden buffer
 set hidden
 
 " Show autocomplete menus
