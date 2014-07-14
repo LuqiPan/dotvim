@@ -49,11 +49,11 @@ set autoread
 " Automatically indent when adding a curly bracket, etc.
 set smartindent
 
-" Tabs should be converted to a group of 4 spaces
+" Tabs should be converted to a group of 2 spaces
 set smarttab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 set expandtab
 
 " Display cursor position
