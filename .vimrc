@@ -44,6 +44,8 @@ set showcmd
 
 " Show editing mode
 set showmode
+
+" Let vim auto reload file if it is changed
 set autoread
 
 " Automatically indent when adding a curly bracket, etc.
