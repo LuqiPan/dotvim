@@ -58,6 +58,8 @@ set expandtab
 
 " Display cursor position
 set ruler
+
+" Allow creating hidden buffer
 set hidden
 
 " Show autocomplete menus
@@ -65,15 +67,6 @@ set wildmenu
 
 " Status line
 set laststatus=2
-set statusline=
-set statusline+=%-3.3n\                      " buffer number
-set statusline+=%f\                          " filename
-set statusline+=%h%m%r%w                     " status flags
-set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type
-set statusline+=%=                           " right align remainder
-set statusline+=0x%-8B                       " character value
-set statusline+=%-14(%l,%c%V%)               " line, character
-set statusline+=%<%P                         " file position
 
 " Set command line height to 2 lines
 set cmdheight=2
@@ -87,23 +80,15 @@ colorscheme default
 set visualbell
 
 " use XML plugin for .xml files
-autocmd BufNewFile,BufRead *.xml source ~/.vim/ftplugin/xml.vim
+"autocmd BufNewFile,BufRead *.xml source ~/.vim/ftplugin/xml.vim
 " autocmd BufNewFile *.xml source ~/.vim/ftplugin/xmlheader.vim
 
 " plugins for python
 autocmd BufNewFile,BufRead *.py compiler python
 
-" mr to make and run C assignment for CS167
-nmap mr :!make && ./sh<CR>
-
 " plugins to make jekyll build for markdown
 autocmd BufNewFile,BufRead *.md compiler md
-
-" set tab width for ruby
-autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab
-
-" set tab width for CoffeeScript
-autocmd FileType coffee setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd BufNewFile,BufRead *.md setlocal shiftwidth=4 softtabstop=4 tabstop=4
 
 " map :W to :w | :make
 command W execute "w | make"
@@ -170,3 +155,33 @@ set directory=$HOME/.vim/swapfiles//
 
 " 80-column mark
 set colorcolumn=81
+
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:↩,trail:□
+
+" Strip trailing whitespaces
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
+" binding to strip trailing whitespaces
+nnoremap <leader>swl :call <SID>StripTrailingWhitespaces()<CR>
+
+if has("autocmd")
+  " Source the vimrc file after saving it
+  autocmd bufwritepost .vimrc source $MYVIMRC
+endif
+
+" \v to edit vimrc file in current window
+nnoremap <leader>vrc :edit $MYVIMRC<CR>
