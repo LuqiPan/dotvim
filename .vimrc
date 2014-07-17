@@ -187,3 +187,6 @@ endif
 
 " \v to edit vimrc file in current window
 nnoremap <leader>vrc :edit $MYVIMRC<CR>
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
