@@ -5,6 +5,9 @@ set nocompatible
 " No need: I've deleted vim-airline
 " let g:pathogen_disabled = [""]
 
+" Bind leader key to ,
+let mapleader=","
+
 " Start pathogen
 execute pathogen#incubate()
 execute pathogen#infect()
@@ -24,6 +27,7 @@ filetype plugin on
 " Use UTF-8
 set encoding=utf-8
 
+" highlight search
 set hlsearch
 
 " Search as you type
@@ -34,7 +38,7 @@ set smartcase
 set ignorecase
 
 " Lines to keep above and below the cursor
-set scrolloff=3
+set scrolloff=99
 
 " Show line number
 set nu
@@ -123,7 +127,6 @@ let g:airline_theme='bubblegum'
 
 set ttimeoutlen=50
 set encoding=utf-8
-set scrolloff=50
 
 " backspace problems
 set backspace=2
@@ -186,7 +189,11 @@ if has("autocmd")
 endif
 
 " \v to edit vimrc file in current window
-nnoremap <leader>vrc :edit $MYVIMRC<CR>
+nnoremap <leader>vrc :tabedit $MYVIMRC<CR>
 
+" highlight extra white spaces
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
+
+" ,, to switch between 2 recent tabs
+nnoremap <leader><leader> <c-^>
