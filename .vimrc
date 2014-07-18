@@ -97,7 +97,7 @@ autocmd BufNewFile,BufRead *.md compiler md
 autocmd BufNewFile,BufRead *.md setlocal shiftwidth=4 softtabstop=4 tabstop=4
 
 " map :W to :w | :make
-command W execute "w | make"
+command! W execute "w | make"
 
 " use space to open and close fold
 nnoremap <space> za  
