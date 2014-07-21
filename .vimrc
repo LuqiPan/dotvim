@@ -181,7 +181,7 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 
 " binding to strip trailing whitespaces
-nnoremap <leader>swl :call <SID>StripTrailingWhitespaces()<CR>
+nnoremap <leader>stw :call <SID>StripTrailingWhitespaces()<CR>
 
 if has("autocmd")
   " Source the vimrc file after saving it
