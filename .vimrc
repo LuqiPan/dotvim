@@ -43,7 +43,7 @@ set scrolloff=99
 " Show line number
 set nu
 
-" Display incomplete commands 
+" Display incomplete commands
 set showcmd
 
 " Show editing mode
@@ -100,7 +100,7 @@ autocmd BufNewFile,BufRead *.md setlocal shiftwidth=4 softtabstop=4 tabstop=4
 command! W execute "w | make"
 
 " use space to open and close fold
-nnoremap <space> za  
+nnoremap <space> za
 
 " ============================================================
 "set foldmethod=indent
@@ -182,6 +182,8 @@ endfunction
 
 " binding to strip trailing whitespaces
 nnoremap <leader>stw :call <SID>StripTrailingWhitespaces()<CR>
+" strip trailing whitespaces before save
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 if has("autocmd")
   " Source the vimrc file after saving it
@@ -192,8 +194,13 @@ endif
 nnoremap <leader>vrc :tabedit $MYVIMRC<CR>
 
 " highlight extra white spaces
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
+if exists('+colorcolumn')
+  set colorcolumn=81
+else
+  match ErrorMsg '\%>80v.\+'
+endif
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
 
 " ,, to switch between 2 recent tabs
 nnoremap <leader><leader> <c-^>
