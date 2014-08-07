@@ -193,6 +193,9 @@ endif
 " \v to edit vimrc file in current window
 nnoremap <leader>vrc :tabedit $MYVIMRC<CR>
 
+" feed current file into scheme
+nnoremap <leader>scm :!scheme < %<CR>
+
 " highlight extra white spaces
 if exists('+colorcolumn')
   set colorcolumn=81

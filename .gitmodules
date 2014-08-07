@@ -55,3 +55,18 @@
 [submodule "bundle/vim-gitgutter"]
 	path = bundle/vim-gitgutter
 	url = git://github.com/airblade/vim-gitgutter.git
+[submodule "bundle/vim-niji"]
+	path = bundle/vim-niji
+	url = git@github.com:amdt/vim-niji.git
+[submodule "bundle/vim-leiningen"]
+	path = bundle/vim-leiningen
+	url = git://github.com/tpope/vim-leiningen.git
+[submodule "bundle/vim-fireplace"]
+	path = bundle/vim-fireplace
+	url = git://github.com/tpope/vim-fireplace.git
+[submodule "bundle/vim-projectionist"]
+	path = bundle/vim-projectionist
+	url = git://github.com/tpope/vim-projectionist.git
+[submodule "bundle/vim-dispatch"]
+	path = bundle/vim-dispatch
+	url = git://github.com/tpope/vim-dispatch.git
