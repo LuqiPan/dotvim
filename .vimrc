@@ -207,3 +207,7 @@ match OverLength /\%81v.\+/
 
 " ,, to switch between 2 recent tabs
 nnoremap <leader><leader> <c-^>
+
+" config gitgutter
+let g:gitgutter_realtime=1
+let g:gitgutter_eager=1
