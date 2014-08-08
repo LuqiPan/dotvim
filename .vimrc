@@ -1,6 +1,7 @@
 " Use Vim settings, rather then Vi settings
 set nocompatible
 
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 " Pathogen disabled plugins list
 " No need: I've deleted vim-airline
 " let g:pathogen_disabled = [""]
@@ -9,7 +10,7 @@ set nocompatible
 let mapleader=","
 
 " Start pathogen
-execute pathogen#incubate()
+execute pathogen#infect('bundle/{}')
 execute pathogen#infect()
 execute pathogen#helptags()
 
