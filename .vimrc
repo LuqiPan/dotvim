@@ -221,3 +221,9 @@ nnoremap <leader><leader> <c-^>
   "let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   "let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 "endif
+
+" key bindings for opening files in the same folder as current file
+cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+map <leader>ew :e %%
+map <leader>es :sp %%
+map <leader>ev :vsp %%
