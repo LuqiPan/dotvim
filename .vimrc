@@ -227,3 +227,9 @@ cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
 map <leader>ew :e %%
 map <leader>es :sp %%
 map <leader>ev :vsp %%
+
+" a command to triger soft wrap
+command! -nargs=* Wrap set wrap linebreak nolist
+
+" add a show break character
+" set showbreak=…
