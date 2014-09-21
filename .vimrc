@@ -233,3 +233,8 @@ command! -nargs=* Wrap set wrap linebreak nolist
 
 " add a show break character
 " set showbreak=…
+
+" merlin configs
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/ocamlmerlin/vim"
+execute "set rtp+=" . g:opamshare . "/ocamlmerlin/vimbufsync"
