@@ -238,3 +238,7 @@ command! -nargs=* Wrap set wrap linebreak nolist
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/ocamlmerlin/vim"
 execute "set rtp+=" . g:opamshare . "/ocamlmerlin/vimbufsync"
+let g:syntastic_ocaml_checkers = ['merlin']
+
+" hook up merlin with Supertab
+au FileType ocaml call SuperTabSetDefaultCompletionType("<c-x><c-o>")
