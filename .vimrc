@@ -242,3 +242,9 @@ let g:syntastic_ocaml_checkers = ['merlin']
 
 " hook up merlin with Supertab
 au FileType ocaml call SuperTabSetDefaultCompletionType("<c-x><c-o>")
+
+" toggle spell checking on and off with `,s`
+" nmap <silent> <leader>s :set spell!<CR>
+
+" Set region to British English
+set spelllang=en_us
