@@ -80,7 +80,7 @@ set cmdheight=2
 
 " Set the colorscheme to default
 " Since the colorscheme of the terminal has already been set to solarized
-set background=light
+set background=dark
 colorscheme solarized
 
 " Error bells are displayed visually.
