@@ -4,7 +4,7 @@ set nocompatible
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 " Pathogen disabled plugins list
 " No need: I've deleted vim-airline
-" let g:pathogen_disabled = [""]
+let g:pathogen_disabled = ["vim2hs"]
 
 " Bind leader key to ,
 let mapleader=","
@@ -246,5 +246,26 @@ au FileType ocaml call SuperTabSetDefaultCompletionType("<c-x><c-o>")
 " toggle spell checking on and off with `,s`
 " nmap <silent> <leader>s :set spell!<CR>
 
-" Set region to British English
+" Set region to American English
 set spelllang=en_us
+
+" ===========Haskell settings===========
+" Get type
+map <silent> ff :GhcModType<CR>
+" Clear type
+map <silent> fk :GhcModTypeClear<CR>
+" Compiler check
+map <silent> fc : GhcModCheck<CR>
+" Lint check
+map <silent> fl : GhcModLint<CR>
+
+" Enable neocomplete
+let g:neocomplete#enable_at_startup = 1
+
+" Syntastic
+map <silent> <Leader>e :Errors<CR>
+map <Leader>s :SyntasticToggleMode<CR>
+
+let g:syntastic_mode_map = { "mode": "passive",
+                           \ "active_filetypes": ["ruby"],
+                           \ "passive_filetypes": [] }
