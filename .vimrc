@@ -269,3 +269,6 @@ map <Leader>s :SyntasticToggleMode<CR>
 let g:syntastic_mode_map = { "mode": "passive",
                            \ "active_filetypes": ["ruby"],
                            \ "passive_filetypes": [] }
+
+" ===========Go settings===========
+autocmd BufNewFile,BufRead *.go setlocal autoindent noexpandtab shiftwidth=4 tabstop=4
