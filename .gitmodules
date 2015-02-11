@@ -99,3 +99,6 @@
 [submodule "bundle/neco-ghc"]
 	path = bundle/neco-ghc
 	url = git@github.com:eagletmt/neco-ghc.git
+[submodule "bundle/vim-go"]
+	path = bundle/vim-go
+	url = https://github.com/fatih/vim-go.git
