@@ -55,7 +55,6 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH=/Applications/Racket\ v5.3.6/bin:$PATH
 export PATH=/Users/luqi/GitHub/Unix-Programming-Environment:$PATH
 export PATH=/usr/local/bin:$PATH
-eval "$(rbenv init -)"
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 alias ll='ls -l'
 alias la='ls -a'
@@ -108,3 +107,6 @@ export GOPATH=$HOME/go
 
 # thefuck
 alias fuck='$(thefuck $(fc -ln -1))'
+
+# vi to vim
+alias vi=vim
