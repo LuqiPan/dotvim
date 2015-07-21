@@ -105,3 +105,4 @@
 [submodule "bundle/idris-vim"]
 	path = bundle/idris-vim
 	url = git@github.com:idris-hackers/idris-vim.git
+	ignore = dirty
