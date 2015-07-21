@@ -272,3 +272,7 @@ let g:syntastic_mode_map = { "mode": "passive",
 
 " ===========Go settings===========
 autocmd BufNewFile,BufRead *.go setlocal autoindent noexpandtab shiftwidth=4 tabstop=4
+
+" disable Python scratch preview
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
