@@ -4,7 +4,7 @@ set nocompatible
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 " Pathogen disabled plugins list
 " No need: I've deleted vim-airline
-let g:pathogen_disabled = ["vim2hs"]
+let g:pathogen_disabled = ["vim2hs", "neocomplete"]
 
 " Bind leader key to ,
 let mapleader=","
@@ -81,7 +81,7 @@ set cmdheight=2
 " Set the colorscheme to default
 " Since the colorscheme of the terminal has already been set to solarized
 set background=light
-colorscheme solarized
+" colorscheme solarized
 
 " Error bells are displayed visually.
 set visualbell
@@ -272,3 +272,9 @@ let g:syntastic_mode_map = { "mode": "passive",
 
 " ===========Go settings===========
 autocmd BufNewFile,BufRead *.go setlocal autoindent noexpandtab shiftwidth=4 tabstop=4
+
+" Easier split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
