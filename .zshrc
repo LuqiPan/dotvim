@@ -55,7 +55,6 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH=/Applications/Racket\ v5.3.6/bin:$PATH
 export PATH=/Users/luqi/GitHub/Unix-Programming-Environment:$PATH
 export PATH=/usr/local/bin:$PATH
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 alias ll='ls -l'
 alias la='ls -a'
 alias grep='grep --color=auto'
